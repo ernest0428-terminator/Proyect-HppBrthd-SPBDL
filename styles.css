@@ -1,0 +1,396 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.secondary-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #0c132c;
+    position: relative;
+}
+
+.contenido-secundario {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: #bd4ff4;
+    box-shadow: 0 0 0 10px #bd4ff444, 0 0 50px #bd4ff4, 0 0 100px #bd4ff4;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-120vh) scale(1);
+    }
+}
+
+:root {
+    --color-bg: #3A3D4D;
+    --color-surface: #12141A;
+    --color-border: #2B2D3B;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #9CA2B8;
+    --color-tooltip-bg: #fff;
+    --color-tooltip-text: #000;
+    --shadow-border: rgba(255, 255, 255, 0.1);
+    --user-bg-color: #FAFAFC;
+    --primary: 195 80% 65%;
+}
+
+body {
+    background-color: rgb(43, 42, 51);
+    transition: color 0.5s ease;
+    background-color: 0.3s ease, left 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    font-family: "Roboto", system-ui;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.login-container {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 10px var(--shadow-border);
+}
+
+.login-container h1 {
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.clave-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 25px;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.clave-input::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.iniciar-btn {
+    padding: 15px 40px;
+    color: #FFF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 100px;
+    z-index: 0;
+}
+
+.iniciar-btn:hover {
+    color: var(--color-text-secondary);
+}
+
+.iniciar-btn:hover::before {
+    color: var(--color-text-secondary);
+    opacity: 1;
+}
+
+.iniciar-btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 100px;
+}
+
+.iniciar-btn::before {
+    content: "";
+    z-index: -1;
+    background: linear-gradient(45deg, #00BFFF, #008cff, #0037ff, #00008B, #4B0082, #7c0082, #820079, #9370DB, #00BFFF);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 100px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.error-modal, .song-list-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0 10px var(--shadow-border);
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content p, .modal-content h3 {
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.modal-content button {
+    background-color: #232323;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: var(--color-text-secondary);
+}
+
+.song-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.song-list li {
+    color: var(--color-text-primary);
+    padding: 0.5rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.song-list li:hover {
+    background-color: var(--color-bg);
+}
+
+.sidebar {
+    padding: 2rem;
+    text-align: center;
+}
+
+.reproductor {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 10px var(--shadow-border);
+    z-index: 5;
+    width: 250px;
+}
+
+.album-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin: 0 auto 1rem; /* Agregado: Centra la imagen horizontalmente */
+    display: block;
+}
+
+#song-title { /* Agregado: Estilos para el título de la canción */
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    margin-bottom: 1rem;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: var(--color-border);
+    outline: none;
+    border-radius: 5px;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #00BFFF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.control-btn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.play-pause {
+    position: relative;
+}
+
+/* Estilos para el mensaje de Feliz Cumpleaños en la pantalla secundaria */
+.secondary-screen h2 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8vw;
+    color: #FFFFFF;
+    text-align: center;
+    z-index: 10;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    white-space: nowrap;
+    max-width: 130%;
+}
+
+.mensaje {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5vw;
+    color: #FFFFFF;
+    text-align: center;
+    z-index: 10;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    white-space: nowrap;
+    max-width: 90%;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.signature {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4vw;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+/* Media queries para responsividad adicional */
+@media (max-width: 600px) {
+    .secondary-screen h2 {
+        font-size: 8vw;
+    }
+    .bubbles span {
+        width: 20px;
+        height: 20px;
+    }
+    .reproductor {
+        width: 200px;
+        bottom: 5%;
+    }
+    .album-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .secondary-screen h2 {
+        font-size: 6vw;
+    }
+}
+
+@media (min-width: 1201px) {
+    .secondary-screen h2 {
+        font-size: 4vw;
+    }
+}

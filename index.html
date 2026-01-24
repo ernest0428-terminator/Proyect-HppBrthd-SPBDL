@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="resources/Image/icons/icon_page.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Hppy Brthdy | by @ernest0ale428</title>
+</head>
+<body>
+    <!-- Pantalla Principal: Login -->
+    <div id="login-screen" class="screen">
+        <div class="login-container">
+            <h1>Introduzca la clave</h1>
+            <input type="password" id="clave-input" placeholder="Clave" class="clave-input">
+            <button id="iniciar-btn" class="iniciar-btn">
+                <span class="inner"></span>
+                Iniciar
+            </button>
+        </div>
+    </div>
+
+    <!-- Pantalla Secundaria: Contenido original -->
+    <div id="secondary-screen" class="secondary-screen hidden">
+        <div class="sidebar">
+            <h2>¡Felices 18 Shakira ;D!</h2>
+            <p class="mensaje">Nivel desbloqueado: un año más increíble</p>
+            <p class="signature">— Ernesto</p>
+        </div>
+        <div id="reproductor" class="reproductor">
+            <img id="album-img-0" class="album-img" src="resources/Image/Holiday.jpg" alt="album-img" style="display: block;"></img>
+            <img id="album-img-1" class="album-img" src="resources/Image/GOSSIP.jpg" alt="album-img" style="display: none;"></img>
+            <img id="album-img-2" class="album-img" src="resources/Image/IDontWanttoMissaThing.jpg" alt="album-img" style="display: none;"></img>
+            <img id="album-img-3" class="album-img" src="resources/Image/TheEmptinessMachine.jpg" alt="album-img" style="display: none;"></img>
+            <img id="album-img-4" class="album-img" src="resources/Image/Heathens.jpg" alt="album-img" style="display: none;"></img>
+            
+            <p id="song-title">Holiday</p> <!-- Agregado: Muestra el nombre de la canción -->
+            
+            <input type="range" id="progress-bar" class="progress-bar" min="0" max="100" value="0">
+            <div class="controls">
+                <img id="prev-btn" class="control-btn" src="resources/Image/icons_white/skip-previous.png" alt="prev-btn"></img>
+                <img id="play-btn" class="control-btn play-pause" src="resources/Image/icons_white/play.png" alt="play-btn" style="display: block;"></img>
+                <img id="pause-btn" class="control-btn play-pause" src="resources/Image/icons_white/pause.png" alt="pause-btn" style="display: none;"></img>
+                <img id="next-btn" class="control-btn" src="resources/Image/icons_white/skip-next.png" alt="next-btn"></img>
+                <img id="list-btn" class="control-btn" src="resources/Image/icons_white/list.png" alt="list-btn"></img>
+            </div>
+        </div>
+        <div class="contenido-secundario">
+            <div class="bubbles">
+                <span style="--i:11;"></span>
+                <span style="--i:12;"></span>
+                <span style="--i:24;"></span>
+                <span style="--i:10;"></span>
+                <span style="--i:14;"></span>
+                <span style="--i:23;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:16;"></span>
+                <span style="--i:19;"></span>
+                <span style="--i:20;"></span>
+                <span style="--i:22;"></span>
+                <span style="--i:25;"></span>
+                <span style="--i:18;"></span>
+                <span style="--i:21;"></span>
+                <span style="--i:15;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:26;"></span>
+                <span style="--i:17;"></span>
+                <span style="--i:13;"></span>
+                <span style="--i:28;"></span>
+            </div>
+        </div>
+    </div>
+<!-- Modal de Error -->
+    <div id="error-modal" class="error-modal hidden">
+        <div class="modal-content">
+            <p>La clave es incorrecta.</p>
+            <button id="aceptar-btn">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Lista de Canciones -->
+    <div id="song-list-modal" class="song-list-modal hidden">
+        <div class="modal-content">
+            <h3>Lista de Canciones</h3>
+            <ul id="song-list" class="song-list">
+                <!-- Canciones se agregarán dinámicamente por JS -->
+            </ul>
+            <button id="close-list-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
