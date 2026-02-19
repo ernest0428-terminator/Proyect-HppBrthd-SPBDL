@@ -393,7 +393,8 @@ body {
     
     /* Reescribimos SOLO para móvil */
     .secondary-screen h2 {
-        position: static; /* Quitamos absolute */
+        position: absolute;
+        /*position: static;*/ /* Quitamos absolute */
         transform: none;
         font-size: 9vw;
         color: #FFFFFF;
@@ -406,7 +407,8 @@ body {
     }
     
     .mensaje {
-        position: static; /* Quitamos absolute */
+        position: absolute;
+        /*position: static;*/ /* Quitamos absolute */
         transform: none;
         font-size: 5vw;
         color: #FFFFFF;
@@ -420,7 +422,8 @@ body {
     }
     
     .signature {
-        position: static; /* Quitamos absolute */
+        position: absolute;
+        /*position: static;*/ /* Quitamos absolute */
         transform: none;
         font-size: 4vw;
         color: rgba(255, 255, 255, 0.8);
