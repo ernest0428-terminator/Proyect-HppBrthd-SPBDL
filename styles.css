@@ -372,7 +372,7 @@ body {
 /* ===== Todo lo que está aquí dentro SOLO afecta a pantallas verticales pequeñas ===== */
 /* ============================================ */
 
-@media (max-width: 600px){
+@media (max-width: 600px) and (orientation: portrait){
     
     /* Sidebar con flex para móvil */
     .sidebar {
@@ -393,10 +393,10 @@ body {
     
     /* Reescribimos SOLO para móvil */
     .secondary-screen h2 {
-        position: absolute;
+        position: static;
         /*position: static;*/ /* Quitamos absolute */
         transform: none;
-        font-size: 9vw;
+        font-size: 8vw;
         color: #FFFFFF;
         text-align: center;
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
@@ -407,10 +407,10 @@ body {
     }
     
     .mensaje {
-        position: absolute;
+        position: static;
         /*position: static;*/ /* Quitamos absolute */
         transform: none;
-        font-size: 5vw;
+        font-size: 4.7vw;
         color: #FFFFFF;
         text-align: center;
         text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
@@ -422,7 +422,7 @@ body {
     }
     
     .signature {
-        position: absolute;
+        position: static;
         /*position: static;*/ /* Quitamos absolute */
         transform: none;
         font-size: 4vw;
