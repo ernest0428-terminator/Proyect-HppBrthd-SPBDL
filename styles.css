@@ -478,16 +478,22 @@ body {
 
 @media (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
     .secondary-screen h2 {
-        font-size: 7vw;
+        font-size: 6vw;
     }
-    .mensaje {
+    /*.mensaje {
         font-size: 3vw;
     }
     .signature {
         font-size: 2.2vw;
-    }
+    }*/
     .reproductor {
         bottom: 20%;
+    }
+}
+
+@media (min-width: 1201px) {
+    .secondary-screen h2 {
+        font-size: 4vw;
     }
 }
 
