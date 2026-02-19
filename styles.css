@@ -369,6 +369,12 @@ body {
     .secondary-screen h2 {
         font-size: 8vw;
     }
+    .mensaje{
+        font-size: 2.5vw;
+    }
+    .signature{
+        font-size: 1.4vw;
+    }
     .bubbles span {
         width: 20px;
         height: 20px;
@@ -387,10 +393,22 @@ body {
     .secondary-screen h2 {
         font-size: 6vw;
     }
+    .mensaje{
+        font-size: 4.5vw;
+    }
+    .signature{
+        font-size: 3.4vw;
+    }
 }
 
 @media (min-width: 1201px) {
     .secondary-screen h2 {
         font-size: 4vw;
+    }
+    .mensaje{
+        font-size: 3.5vw;
+    }
+    .signature{
+        font-size: 2.4vw;
     }
 }
